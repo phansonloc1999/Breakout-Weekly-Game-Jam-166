@@ -6,6 +6,8 @@ public class PaddleMovement : MonoBehaviour
 {
     [SerializeField] private PaddleData _data;
 
+    [SerializeField] private BallMovement _ballMovement;
+
     private bool isMoving;
 
     public bool IsMoving { get => isMoving; set => isMoving = value; }
@@ -35,6 +37,13 @@ public class PaddleMovement : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             IsMoving = false;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            var xVelocity = Random.Range(-4.0f, 4.0f);
+            var yVelocity = Mathf.Sqrt(5 * 5 - xVelocity * xVelocity);
+            _ballMovement.SetVelocity(new Vector2(xVelocity, yVelocity));
         }
     }
 }

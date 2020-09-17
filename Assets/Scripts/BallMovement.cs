@@ -4,10 +4,15 @@ public class BallMovement : MonoBehaviour
 {
     [SerializeField] private Vector2 _velocity;
 
+    [SerializeField] private Transform _paddleTransform;
+
+    [SerializeField] private float _yOffsetToPaddle;
+
     public Vector2 Velocity { get => _velocity; set => _velocity = value; }
 
     private void Start()
     {
+        GoToPaddle();
     }
 
     private void Update()
@@ -18,5 +23,10 @@ public class BallMovement : MonoBehaviour
     public void SetVelocity(Vector2 newVelocity)
     {
         Velocity = newVelocity;
+    }
+
+    public void GoToPaddle()
+    {
+        transform.position = new Vector3(_paddleTransform.position.x, _paddleTransform.position.y + _yOffsetToPaddle, transform.position.z);
     }
 }
