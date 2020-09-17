@@ -6,6 +6,10 @@ public class PaddleMovement : MonoBehaviour
 {
     [SerializeField] private PaddleData _data;
 
+    private bool isMoving;
+
+    public bool IsMoving { get => isMoving; set => isMoving = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +26,15 @@ public class PaddleMovement : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position = new Vector3(transform.position.x + _data.MoveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            IsMoving = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            IsMoving = false;
         }
     }
 }
