@@ -10,21 +10,9 @@ public class BallCollision : MonoBehaviour
 
     [SerializeField] private float _velocityScale;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        _velocityScale = 1f; // Default is no scale at all
+        _velocityScale = 1f; // Default no scale at all
         if (other.tag == "Paddle" && _paddleMovement.IsMoving) _velocityScale = 1.2f;
 
         var dx = Mathf.Abs(transform.position.x - other.transform.position.x) - other.bounds.size.x / 2;
@@ -35,5 +23,8 @@ public class BallCollision : MonoBehaviour
 
         if (dx < dy)
             _ballMovement.SetVelocity(new Vector2(_ballMovement.Velocity.x * _velocityScale, -_ballMovement.Velocity.y * _velocityScale));
+
+        if (other.tag == "Brick")
+            Destroy(other.gameObject);
     }
 }
