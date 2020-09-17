@@ -2,13 +2,12 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    private Vector2 _velocity;
+    [SerializeField] private Vector2 _velocity;
 
     public Vector2 Velocity { get => _velocity; set => _velocity = value; }
 
     private void Start()
     {
-        Velocity = new Vector2(1, -1);
     }
 
     private void Update()
