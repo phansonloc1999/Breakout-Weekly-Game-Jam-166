@@ -8,6 +8,8 @@ public class PaddleMovement : MonoBehaviour
 
     [SerializeField] private BallMovement _ballMovement;
 
+    [SerializeField] private Vector3 _startPos;
+
     private bool isMoving;
 
     public bool IsMoving { get => isMoving; set => isMoving = value; }
@@ -15,7 +17,7 @@ public class PaddleMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        _startPos = transform.position;
     }
 
     // Update is called once per frame
@@ -45,5 +47,10 @@ public class PaddleMovement : MonoBehaviour
             var yVelocity = Mathf.Sqrt(5 * 5 - xVelocity * xVelocity);
             _ballMovement.SetVelocity(new Vector2(xVelocity, yVelocity));
         }
+    }
+
+    public void GoToStartPosition()
+    {
+        transform.position = new Vector3(_startPos.x, _startPos.y);
     }
 }

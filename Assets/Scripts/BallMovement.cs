@@ -12,7 +12,7 @@ public class BallMovement : MonoBehaviour
 
     private void Start()
     {
-        GoToPaddle();
+        SetPosOnTopOfPaddle();
     }
 
     private void Update()
@@ -25,8 +25,13 @@ public class BallMovement : MonoBehaviour
         Velocity = newVelocity;
     }
 
-    public void GoToPaddle()
+    public void SetPosOnTopOfPaddle()
     {
         transform.position = new Vector3(_paddleTransform.position.x, _paddleTransform.position.y + _yOffsetToPaddle, transform.position.z);
+    }
+
+    public void ResetVelocity()
+    {
+        _velocity = Vector2.zero;
     }
 }
