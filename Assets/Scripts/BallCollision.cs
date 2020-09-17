@@ -8,6 +8,8 @@ public class BallCollision : MonoBehaviour
 
     [SerializeField] private PaddleMovement _paddleMovement;
 
+    [SerializeField] private float _velocityScale;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,20 +24,16 @@ public class BallCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var otherGameObjectSpriteSize = other.GetComponent<SpriteRenderer>().sprite.bounds.size;
+        _velocityScale = 1f; // Default is no scale at all
+        if (other.tag == "Paddle" && _paddleMovement.IsMoving) _velocityScale = 1.2f;
 
-        var contactPoints = new ContactPoint2D[1];
-        other.GetContacts(contactPoints);
+        var dx = Mathf.Abs(transform.position.x - other.transform.position.x) - other.bounds.size.x / 2;
+        var dy = Mathf.Abs(transform.position.y - other.transform.position.y) - other.bounds.size.y / 2;
 
-        if (contactPoints[0].point.y >= other.transform.position.y + otherGameObjectSpriteSize.y / 2)
-        {
-            if (other.tag == "Paddle")
-            {
-                float velocityScale = 1f;
-                if (_paddleMovement.IsMoving) velocityScale = 2.0f;
+        if (dx > dy)
+            _ballMovement.SetVelocity(new Vector2(-_ballMovement.Velocity.x * _velocityScale, _ballMovement.Velocity.y * _velocityScale));
 
-                _ballMovement.SetVelocity(new Vector2(_ballMovement.Velocity.x * velocityScale, -_ballMovement.Velocity.y * velocityScale));
-            }
-        }
+        if (dx < dy)
+            _ballMovement.SetVelocity(new Vector2(_ballMovement.Velocity.x * _velocityScale, -_ballMovement.Velocity.y * _velocityScale));
     }
 }
