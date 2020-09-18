@@ -8,7 +8,10 @@ public class BallCollision : MonoBehaviour
 
     [SerializeField] private PaddleMovement _paddleMovement;
 
-    [SerializeField] private float _velocityScale;
+    [Header("Velocity Scaling")]
+    [SerializeField] private float _lastVelocityScale;
+    [SerializeField] private float _speedUpVelocityScale;
+    [SerializeField] private float _slowDownVelocityScale;
 
     [SerializeField] private BoxCollider2D _paddleCenterCollider;
 
@@ -27,14 +30,15 @@ public class BallCollision : MonoBehaviour
     {
         if (!_hasPrevCollisionInSameFrame)
         {
-            _velocityScale = 1f; // Default no scale at all
+            _lastVelocityScale = 1.0f; // Default no scale at all
 
             var dx = 0f;
             var dy = 0f;
 
             if (other.tag == "PaddleOuter" || other.tag == "PaddleCenter")
             {
-                if (other.tag == "PaddleOuter" && _paddleMovement.IsMoving) _velocityScale = 1.2f;
+                if (other.tag == "PaddleOuter" && _paddleMovement.IsMoving) _lastVelocityScale = _speedUpVelocityScale;
+                if (other.tag == "PaddleCenter") _lastVelocityScale = _slowDownVelocityScale;
 
                 dx = Mathf.Abs(transform.position.x - _paddleTransform.position.x) - (_paddleOuterCollider.bounds.size.x * 2 + _paddleCenterCollider.bounds.size.x) / 2;
                 dy = Mathf.Abs(transform.position.y - _paddleTransform.position.y) - (_paddleOuterCollider.bounds.size.y + _paddleCenterCollider.bounds.size.y) / 2;
@@ -70,11 +74,11 @@ public class BallCollision : MonoBehaviour
 
     private void SideBouncing()
     {
-        _ballMovement.SetVelocity(new Vector2(-_ballMovement.Velocity.x * _velocityScale, _ballMovement.Velocity.y * _velocityScale));
+        _ballMovement.SetVelocity(new Vector2(-_ballMovement.Velocity.x * _lastVelocityScale, _ballMovement.Velocity.y * _lastVelocityScale));
     }
 
     private void TopBottomBouncing()
     {
-        _ballMovement.SetVelocity(new Vector2(_ballMovement.Velocity.x * _velocityScale, -_ballMovement.Velocity.y * _velocityScale));
+        _ballMovement.SetVelocity(new Vector2(_ballMovement.Velocity.x * _lastVelocityScale, -_ballMovement.Velocity.y * _lastVelocityScale));
     }
 }
