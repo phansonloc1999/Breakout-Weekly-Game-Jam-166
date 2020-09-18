@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class BrickCollision : MonoBehaviour
 {
+    [SerializeField] private int _hitPoint;
+
     IEnumerator DestroyOnCollisionWithBall()
     {
         yield return new WaitForEndOfFrame();
@@ -13,6 +15,11 @@ public class BrickCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        StartCoroutine(DestroyOnCollisionWithBall());
+        _hitPoint--;
+
+        if (_hitPoint <= 0)
+        {
+            StartCoroutine(DestroyOnCollisionWithBall());
+        }
     }
 }
