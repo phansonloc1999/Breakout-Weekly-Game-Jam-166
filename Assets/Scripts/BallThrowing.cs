@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallThrowDirectionArrow : MonoBehaviour
+public class BallThrowing : MonoBehaviour
 {
     [SerializeField] private Vector2 _mousePointingDirection;
 
@@ -10,7 +10,7 @@ public class BallThrowDirectionArrow : MonoBehaviour
 
     [SerializeField] private BallMovement _ballMovement;
 
-    [SerializeField] private BallThrowDirectionArrow _directionArrow;
+    [SerializeField] private BallThrowing _directionArrow;
 
     [SerializeField] private float _initialBallVelocityVectorLength;
 
