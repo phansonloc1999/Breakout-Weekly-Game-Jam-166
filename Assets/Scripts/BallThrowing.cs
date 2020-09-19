@@ -38,7 +38,6 @@ public class BallThrowing : MonoBehaviour
         {
             _ballMovement.SetVelocity(_directionArrow.MousePointingDirection * _initialBallVelocityVectorLength);
 
-            this.enabled = false;
             _directionArrow.CleanUp();
         }
     }

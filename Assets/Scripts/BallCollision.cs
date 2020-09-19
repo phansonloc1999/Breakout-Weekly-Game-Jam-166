@@ -28,7 +28,7 @@ public class BallCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!_hasPrevCollisionInSameFrame)
+        if (!_hasPrevCollisionInSameFrame && other.tag != "Bottom")
         {
             _lastVelocityScale = 1.0f; // Default no scale at all
 

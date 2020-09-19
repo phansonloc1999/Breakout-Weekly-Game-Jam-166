@@ -8,9 +8,15 @@ namespace MyGame
 
         [SerializeField] private BallMovement _ballMovement;
 
+        [SerializeField] private BottomCollision _bottomCollision;
+
+        [SerializeField] private BallThrowing _ballThrowing;
+
         private void Start()
         {
             SetupStartGame();
+
+            _bottomCollision.OnCollisionWithBall += SetupStartGame;
         }
 
         private void Update()
@@ -26,6 +32,7 @@ namespace MyGame
             _paddleMovement.GoToStartPosition();
             _ballMovement.SetPosOnTopOfPaddle();
             _ballMovement.ResetVelocity();
+            _ballThrowing.gameObject.SetActive(true);
         }
     }
 }
