@@ -40,13 +40,6 @@ public class PaddleMovement : MonoBehaviour
         {
             IsMoving = false;
         }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            var xVelocity = Random.Range(-4.0f, 4.0f);
-            var yVelocity = Mathf.Sqrt(5 * 5 - xVelocity * xVelocity);
-            _ballMovement.SetVelocity(new Vector2(xVelocity, yVelocity));
-        }
     }
 
     public void GoToStartPosition()
