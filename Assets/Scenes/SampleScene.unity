@@ -731,9 +731,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ballMovement: {fileID: 1069220556}
   _paddleMovement: {fileID: 165612901}
-  _currentVelocityScale: 0
-  _speedUpVelocityScale: 1.1
-  _slowDownVelocityScale: 0.9
+  _lastVelocityScale: 0
+  _speedUpVelocityScale: 1.5
+  _slowDownVelocityScale: 0.7
   _paddleCenterCollider: {fileID: 1641940703}
   _paddleOuterCollider: {fileID: 1544676726}
   _paddleTransform: {fileID: 165612898}
