@@ -14,6 +14,10 @@ public class BallThrowing : MonoBehaviour
 
     [SerializeField] private float _initialBallVelocityVectorLength;
 
+    public delegate void ThrowingBallCompleteHandler();
+
+    public event ThrowingBallCompleteHandler OnThrowingBallComplete;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +43,8 @@ public class BallThrowing : MonoBehaviour
             _ballMovement.SetVelocity(_directionArrow.MousePointingDirection * _initialBallVelocityVectorLength);
 
             _directionArrow.CleanUp();
+
+            OnThrowingBallComplete?.Invoke();
         }
     }
 

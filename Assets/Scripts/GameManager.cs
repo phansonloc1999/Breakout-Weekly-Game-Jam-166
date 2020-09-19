@@ -14,25 +14,34 @@ namespace MyGame
 
         private void Start()
         {
-            SetupStartGame();
+            SetupPaddleAndBall();
 
-            _bottomCollision.OnCollisionWithBall += SetupStartGame;
+            _bottomCollision.OnCollisionWithBall += SetupPaddleAndBall;
+
+            _ballThrowing.OnThrowingBallComplete += ReEnablePaddleMovement;
         }
 
         private void Update()
         {
             if (Input.GetKeyUp(KeyCode.R))
             {
-                SetupStartGame();
+                SetupPaddleAndBall();
             }
         }
 
-        private void SetupStartGame()
+        private void SetupPaddleAndBall()
         {
             _paddleMovement.GoToStartPosition();
             _ballMovement.SetPosOnTopOfPaddle();
             _ballMovement.ResetVelocity();
             _ballThrowing.gameObject.SetActive(true);
+            _paddleMovement.SetEnabled(false);
+            _paddleMovement.SetEnabled(false);
+        }
+
+        public void ReEnablePaddleMovement()
+        {
+            _paddleMovement.SetEnabled(true);
         }
     }
 }
