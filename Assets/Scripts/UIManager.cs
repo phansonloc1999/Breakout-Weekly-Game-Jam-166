@@ -8,12 +8,12 @@ namespace UI
     enum GameState
     {
         MainMenu = 0,
-        Playing = 1,
-        Pause = 2
+        Playing = 1
     }
 
-    public class UIManager : MonoBehaviour
+    public class UIManager : BaseSingeton
     {
+
         [SerializeField] MainMenuUI _mainMenuUI;
         [SerializeField] PauseUI _pauseUI;
 
@@ -21,9 +21,9 @@ namespace UI
 
         private bool _isPaused = false;
 
-        private void Awake()
+        protected override void Awake()
         {
-            DontDestroyOnLoad(this);
+            base.Awake();
             Setup();
         }
 
@@ -48,7 +48,7 @@ namespace UI
                     if (Input.GetKeyDown(KeyCode.Escape)){
                         OnPause();
                     }
-                break;
+                    break;
             }       
         }
 
@@ -102,14 +102,19 @@ namespace UI
             else
             {
                 _pauseUI.HideAll();
-                Time.timeScale = 1;
+                StartCoroutine(ResumeGame(1f));
             }
+        }
+
+        IEnumerator ResumeGame(float timer)
+        {
+            yield return new WaitForSecondsRealtime(timer);
+            Time.timeScale = 1f;
         }
 
         public void OnExitToMainMenu()
         {
-            _pauseUI.HideAll();
-            _gameState = GameState.MainMenu;
+            Setup();
             SceneManager.LoadScene(0);
         }
         //----------------IN GAME EVENT----------------

@@ -23,6 +23,7 @@ namespace UI
 
         public void Setup()
         {
+            gameObject.SetActive(true);
             _isShowTab = false;
             _buttonField.SetActive(true);
             _tabField.SetActive(false);
