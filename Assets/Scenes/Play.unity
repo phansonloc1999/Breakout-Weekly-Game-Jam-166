@@ -213,7 +213,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165612897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 662b0521814b2804a955c1d2a7932e24, type: 3}
   m_Name: 
@@ -460,6 +460,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 72.57458
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018255789669272721, guid: c49eae43f8748734aa3f2a7edea3d4d2,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018255789669272721, guid: c49eae43f8748734aa3f2a7edea3d4d2,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018255789669272721, guid: c49eae43f8748734aa3f2a7edea3d4d2,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.13632382
       objectReference: {fileID: 0}
     - target: {fileID: 8018255789669272727, guid: c49eae43f8748734aa3f2a7edea3d4d2,
         type: 3}
@@ -720,6 +735,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 74.76441
       objectReference: {fileID: 0}
+    - target: {fileID: 8018255789669272721, guid: c49eae43f8748734aa3f2a7edea3d4d2,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018255789669272721, guid: c49eae43f8748734aa3f2a7edea3d4d2,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8018255789669272721, guid: c49eae43f8748734aa3f2a7edea3d4d2,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.13782084
+      objectReference: {fileID: 0}
     - target: {fileID: 8018255789669272727, guid: c49eae43f8748734aa3f2a7edea3d4d2,
         type: 3}
       propertyPath: m_Name
@@ -815,7 +845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069220551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3.1, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 394154947}
@@ -922,7 +952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _velocity: {x: 0, y: 0}
   _paddleTransform: {fileID: 165612898}
-  _yOffsetToPaddle: 2
+  _yOffsetToPaddle: 0.4
 --- !u!50 &1069220557
 Rigidbody2D:
   serializedVersion: 4

@@ -38,7 +38,7 @@ public class BallThrowing : MonoBehaviour
 
         transform.parent.up = MousePointingDirection;
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             _ballMovement.SetVelocity(_directionArrow.MousePointingDirection * _initialBallVelocityVectorLength);
 

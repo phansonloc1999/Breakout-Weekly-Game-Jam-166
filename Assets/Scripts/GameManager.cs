@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace MyGame
 {
+    [ExecuteInEditMode]
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private PaddleMovement _paddleMovement;
