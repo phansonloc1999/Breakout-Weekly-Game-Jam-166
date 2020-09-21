@@ -49,7 +49,7 @@ public class BallCollision : MonoBehaviour
                 dy = Mathf.Abs(transform.position.y - other.transform.position.y) - other.bounds.size.y / 2;
             }
 
-            if (dx > dy && dy < 0)
+            if (dx > dy)
             {
                 SideBouncing();
             }
