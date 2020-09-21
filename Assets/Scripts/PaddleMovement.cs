@@ -15,6 +15,18 @@ public class PaddleMovement : MonoBehaviour
 
     public bool IsMoving { get => isMoving; set => isMoving = value; }
 
+    public delegate void PaddleMoveInputChangedHandler();
+
+    public event PaddleMoveInputChangedHandler OnPaddleMoveInputChanged;
+
+    public delegate void PaddleMovingRightHandler();
+
+    public event PaddleMovingRightHandler OnPaddleMovingRight;
+
+    public delegate void PaddleMovingLeftHandler();
+
+    public event PaddleMovingLeftHandler OnPaddleMovingLeft;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,10 +48,23 @@ public class PaddleMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             IsMoving = true;
+            OnPaddleMoveInputChanged?.Invoke();
+
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                OnPaddleMovingRight?.Invoke();
+            }
+            else
+            {
+                OnPaddleMovingLeft?.Invoke();
+            }
         }
         else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
         {
             IsMoving = false;
+            OnPaddleMoveInputChanged?.Invoke();
+
+
         }
     }
 
