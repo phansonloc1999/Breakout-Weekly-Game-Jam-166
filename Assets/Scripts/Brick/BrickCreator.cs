@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class BrickCreator : MonoBehaviour
 {
-    [SerializeField] private GameObject _brickPrefab;
+    [SerializeField] private GameObject _normalBrickPrefab;
+
+    [SerializeField] private GameObject _bombBrickPrefab;
+
+    [SerializeField] private GameObject _rootBrickPrefab;
+
+    [SerializeField] private Sprite _bomBrickSprite;
 
     private void Start()
     {
@@ -11,19 +17,18 @@ public class BrickCreator : MonoBehaviour
 
     public GameObject GetBrickOfType(BRICK_TYPE type, Vector3 spawnPos, Transform parent)
     {
-        var newBrick = Instantiate(_brickPrefab, spawnPos, Quaternion.identity, parent);
+        GameObject newBrick = null;
         if (type == BRICK_TYPE.NORMAL)
         {
-
+            newBrick = Instantiate(_normalBrickPrefab, spawnPos, Quaternion.identity, parent);
         }
         if (type == BRICK_TYPE.BOMB)
         {
-            newBrick.GetComponent<SpriteRenderer>().color = Color.red;
-            newBrick.AddComponent<BombBrick>();
+            newBrick = Instantiate(_bombBrickPrefab, spawnPos, Quaternion.identity, parent);
         }
         if (type == BRICK_TYPE.ROOT)
         {
-            newBrick.GetComponent<SpriteRenderer>().color = Color.green;
+            newBrick = Instantiate(_rootBrickPrefab, spawnPos, Quaternion.identity, parent);
         }
         return newBrick;
     }

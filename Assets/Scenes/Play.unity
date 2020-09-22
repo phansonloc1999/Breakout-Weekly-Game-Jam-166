@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 165612897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.5, z: 0}
-  m_LocalScale: {x: 37.228073, y: -5.207213, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1200856477}
   - {fileID: 1465479750}
@@ -195,8 +195,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ad73014b4dc82054a820cfaf297acabd, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -663,17 +663,22 @@ PrefabInstance:
     - target: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.049229518
+      value: 0.75721306
       objectReference: {fileID: 0}
     - target: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.044786364
+      value: 0.86671555
       objectReference: {fileID: 0}
     - target: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.13
+      value: 0.5498545
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0032154322
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 29151546573682511, guid: 4e794a1599e68fc4eb3829bd742b2ff2, type: 3}
@@ -1065,17 +1070,22 @@ PrefabInstance:
     - target: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.04914909
+      value: -0.75655836
       objectReference: {fileID: 0}
     - target: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.044303805
+      value: 0.860216
       objectReference: {fileID: 0}
     - target: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.13
+      value: 0.54985356
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0032154322
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 29151546573682511, guid: 4e794a1599e68fc4eb3829bd742b2ff2, type: 3}
@@ -1313,7 +1323,22 @@ PrefabInstance:
     - target: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.13
+      value: 0.5498543
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0011922717
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.65022147
+      objectReference: {fileID: 0}
+    - target: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.003215313
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 29151546573682511, guid: 4e794a1599e68fc4eb3829bd742b2ff2, type: 3}
@@ -1367,8 +1392,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd34d68d397b2ff408fd2f1259e390f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _brickPrefab: {fileID: 4017340525544876783, guid: fdbbeb98e14b6b4439047c58188820f0,
+  _normalBrickPrefab: {fileID: 4017340525544876783, guid: fdbbeb98e14b6b4439047c58188820f0,
     type: 3}
+  _bombBrickPrefab: {fileID: 213327973621117044, guid: 4f39936649f5d7544a35dc2116bd524e,
+    type: 3}
+  _rootBrickPrefab: {fileID: 4017340525544876783, guid: fdbbeb98e14b6b4439047c58188820f0,
+    type: 3}
+  _bomBrickSprite: {fileID: 21300000, guid: 175e1a25b40d01c47968df094e146fe7, type: 3}
 --- !u!61 &1544676726 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 1531132553810097902, guid: 4e794a1599e68fc4eb3829bd742b2ff2,
@@ -1428,8 +1458,8 @@ MonoBehaviour:
   NUM_OF_COLUMN: 3
   _brickPrefab: {fileID: 4017340525544876783, guid: fdbbeb98e14b6b4439047c58188820f0,
     type: 3}
-  _brickRowSpacing: 0.5
-  _brickColumnSpacing: 0.5
+  _brickRowSpacing: 1.5
+  _brickColumnSpacing: 1.5
   _brickWidth: 0
   _brickHeight: 0
   _brickCreator: {fileID: 1526232009}

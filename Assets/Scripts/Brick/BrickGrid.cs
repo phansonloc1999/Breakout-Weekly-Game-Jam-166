@@ -30,7 +30,7 @@ public class BrickGrid : MonoBehaviour
         InitFromBrickTypeGrid(new BRICK_TYPE[,] {
             { BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL },
             { BRICK_TYPE.NORMAL, BRICK_TYPE.BOMB, BRICK_TYPE.NORMAL },
-            { BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL }
+            { BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL, BRICK_TYPE.ROOT }
         });
     }
 
