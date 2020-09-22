@@ -14,6 +14,8 @@ public class BallThrowing : MonoBehaviour
 
     [SerializeField] private float _initialBallVelocityVectorLength;
 
+    [SerializeField] private BallCollision _ballCollision;
+
     public delegate void ThrowingBallCompleteHandler();
 
     public event ThrowingBallCompleteHandler OnThrowingBallComplete;
@@ -21,7 +23,6 @@ public class BallThrowing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame

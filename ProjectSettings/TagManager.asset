@@ -10,6 +10,7 @@ TagManager:
   - PaddleOuter
   - Ball
   - Bottom
+  - RootBrick
   layers:
   - Default
   - TransparentFX

@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 165612898}
   - component: {fileID: 165612899}
   - component: {fileID: 165612901}
+  - component: {fileID: 165612900}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Paddle
@@ -206,6 +207,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &165612900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165612897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 091f901b055581541b63b709208f3d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ballCollision: {fileID: 1069220555}
+  _ballMovement: {fileID: 1069220556}
+  _throwDirectionArrow: {fileID: 394154946}
+  _paddleMovement: {fileID: 165612901}
+  _ballThrowing: {fileID: 394154949}
+  MAX_OCCURANCE_TIMES: 5
 --- !u!114 &165612901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +408,7 @@ MonoBehaviour:
   _ballMovement: {fileID: 1069220556}
   _directionArrow: {fileID: 394154949}
   _initialBallVelocityVectorLength: 4
+  _ballCollision: {fileID: 1069220555}
 --- !u!1001 &414197500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1396,7 +1416,7 @@ MonoBehaviour:
     type: 3}
   _bombBrickPrefab: {fileID: 213327973621117044, guid: 4f39936649f5d7544a35dc2116bd524e,
     type: 3}
-  _rootBrickPrefab: {fileID: 4017340525544876783, guid: fdbbeb98e14b6b4439047c58188820f0,
+  _rootBrickPrefab: {fileID: 7671382448037374524, guid: b603213419e93a5449f5fd9a53a6eb3d,
     type: 3}
   _bomBrickSprite: {fileID: 21300000, guid: 175e1a25b40d01c47968df094e146fe7, type: 3}
 --- !u!61 &1544676726 stripped

@@ -21,6 +21,12 @@ public class BallCollision : MonoBehaviour
 
     private bool _hasPrevCollisionInSameFrame;
 
+    public delegate void CollidedWithRootBrickHandler();
+    public event CollidedWithRootBrickHandler OnCollidedWithRootBrick;
+
+    public delegate void CollidedWithPaddleHandler();
+    public event CollidedWithPaddleHandler OnCollidedWithPaddle;
+
     private void Start()
     {
         _hasPrevCollisionInSameFrame = false;
@@ -42,6 +48,8 @@ public class BallCollision : MonoBehaviour
 
                 dx = Mathf.Abs(transform.position.x - _paddleTransform.position.x) - (_paddleOuterCollider.bounds.size.x * 2 + _paddleCenterCollider.bounds.size.x) / 2;
                 dy = Mathf.Abs(transform.position.y - _paddleTransform.position.y) - (_paddleOuterCollider.bounds.size.y + _paddleCenterCollider.bounds.size.y) / 2;
+
+                OnCollidedWithPaddle?.Invoke();
             }
             else
             {
@@ -61,6 +69,11 @@ public class BallCollision : MonoBehaviour
             _hasPrevCollisionInSameFrame = true;
 
             StartCoroutine(ResetHasPrevCollisionInSameFrame());
+        }
+
+        if (other.tag == "RootBrick")
+        {
+            OnCollidedWithRootBrick?.Invoke();
         }
     }
 
