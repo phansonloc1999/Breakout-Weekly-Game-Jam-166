@@ -224,6 +224,7 @@ MonoBehaviour:
   _throwDirectionArrow: {fileID: 394154946}
   _paddleMovement: {fileID: 165612901}
   _ballThrowing: {fileID: 394154949}
+  _superRabbit: {fileID: 1330005416}
   MAX_OCCURANCE_TIMES: 5
 --- !u!114 &165612901
 MonoBehaviour:
@@ -553,8 +554,8 @@ MonoBehaviour:
   m_RefResolutionY: 240
   m_UpscaleRT: 0
   m_PixelSnapping: 0
-  m_CropFrameX: 1
-  m_CropFrameY: 1
+  m_CropFrameX: 0
+  m_CropFrameY: 0
   m_StretchFill: 0
 --- !u!20 &519420031
 Camera:

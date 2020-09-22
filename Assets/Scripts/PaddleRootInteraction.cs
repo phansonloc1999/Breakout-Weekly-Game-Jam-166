@@ -12,6 +12,8 @@ public class PaddleRootInteraction : MonoBehaviour
 
     [SerializeField] private BallThrowing _ballThrowing;
 
+    [SerializeField] private SuperRabbit _superRabbit;
+
     [SerializeField] private int MAX_OCCURANCE_TIMES;
 
     private bool _isActive;
@@ -37,6 +39,8 @@ public class PaddleRootInteraction : MonoBehaviour
             _ballMovement.SetPosOnTopOfPaddle();
             _throwDirectionArrow.SetActive(true);
             _paddleMovement.SetEnabled(false);
+
+            _superRabbit.StopMoving();
 
             _occuranceTimesLeft--;
         }

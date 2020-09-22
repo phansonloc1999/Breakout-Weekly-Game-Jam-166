@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,6 +42,11 @@ public class SuperRabbit : MonoBehaviour
     private void FlipSpriteRendererX()
     {
         _spriteRenderer.flipX = true;
+    }
+
+    public void StopMoving()
+    {
+        _animator.SetBool("isWalking", false);
     }
 
     private void UnflipSpriteRendererX()
