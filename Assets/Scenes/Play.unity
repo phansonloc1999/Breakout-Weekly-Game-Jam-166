@@ -1216,6 +1216,7 @@ MonoBehaviour:
   _yOffsetToPaddle: 1
   _paddleTransform: {fileID: 165612898}
   _paddleMovement: {fileID: 165612901}
+  _ballThrowing: {fileID: 394154949}
 --- !u!95 &1330005417
 Animator:
   serializedVersion: 3

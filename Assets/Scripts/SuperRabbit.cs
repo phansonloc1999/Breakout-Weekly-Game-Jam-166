@@ -13,6 +13,8 @@ public class SuperRabbit : MonoBehaviour
 
     [SerializeField] private PaddleMovement _paddleMovement;
 
+    [SerializeField] private BallThrowing _ballThrowing;
+
     private Animator _animator;
 
     private SpriteRenderer _spriteRenderer;
@@ -26,6 +28,8 @@ public class SuperRabbit : MonoBehaviour
         _paddleMovement.OnPaddleMoveInputChanged += ToggleIsWalkingBoolInAnimator;
         _paddleMovement.OnPaddleMovingRight += FlipSpriteRendererX;
         _paddleMovement.OnPaddleMovingLeft += UnflipSpriteRendererX;
+
+        _ballThrowing.OnStartThrowingBall += PlayThrowingAnimation;
     }
 
     // Update is called once per frame
@@ -52,5 +56,20 @@ public class SuperRabbit : MonoBehaviour
     private void UnflipSpriteRendererX()
     {
         _spriteRenderer.flipX = false;
+    }
+
+    private void PlayThrowingAnimation()
+    {
+        _animator.SetBool("isThrowingBall", true);
+    }
+
+    private void StopThrowingAnimation()
+    {
+        _animator.SetBool("isThrowingBall", false);
+    }
+
+    private void OnReleasedBallAnimationFrame()
+    {
+        _ballThrowing.ThrowBall();
     }
 }

@@ -28,7 +28,7 @@ public class PaddleRootInteraction : MonoBehaviour
 
         _ballCollision.OnCollidedWithRootBrick += Begin;
         _ballCollision.OnCollidedWithPaddle += Setup;
-        _ballThrowing.OnThrowingBallComplete += CleanUp;
+        _ballThrowing.OnThrownBall += CleanUp;
     }
 
     private void Setup()

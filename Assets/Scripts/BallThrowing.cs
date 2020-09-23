@@ -16,13 +16,18 @@ public class BallThrowing : MonoBehaviour
 
     [SerializeField] private BallCollision _ballCollision;
 
-    public delegate void ThrowingBallCompleteHandler();
+    public delegate void ThrownBallHandler();
 
-    public event ThrowingBallCompleteHandler OnThrowingBallComplete;
+    public event ThrownBallHandler OnThrownBall;
+
+    public delegate void StartThrowingBallHandler();
+
+    public event StartThrowingBallHandler OnStartThrowingBall;
 
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -39,13 +44,9 @@ public class BallThrowing : MonoBehaviour
 
         transform.parent.up = MousePointingDirection;
 
-        if (Input.GetKeyUp(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
-            _ballMovement.SetVelocity(_directionArrow.MousePointingDirection * _initialBallVelocityVectorLength);
-
-            _directionArrow.CleanUp();
-
-            OnThrowingBallComplete?.Invoke();
+            OnStartThrowingBall?.Invoke();
         }
     }
 
@@ -55,5 +56,14 @@ public class BallThrowing : MonoBehaviour
         transform.parent.rotation = new Quaternion(0, 0, 0, 0);
 
         gameObject.SetActive(false);
+    }
+
+    public void ThrowBall()
+    {
+        _ballMovement.SetVelocity(_directionArrow.MousePointingDirection * _initialBallVelocityVectorLength);
+
+        _directionArrow.CleanUp();
+
+        OnThrownBall?.Invoke();
     }
 }

@@ -19,7 +19,7 @@ namespace MyGame
 
             _bottomCollision.OnCollisionWithBall += SetupPaddleAndBall;
 
-            _ballThrowing.OnThrowingBallComplete += ReEnablePaddleMovement;
+            _ballThrowing.OnThrownBall += ReEnablePaddleMovement;
         }
 
         private void Update()
