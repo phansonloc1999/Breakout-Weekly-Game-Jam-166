@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165612897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: 0}
+  m_LocalPosition: {x: 0, y: -5.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1200856477}
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 7d0736b84432eac46b60fab5d6fa1fcb, type: 2}
   _ballMovement: {fileID: 1069220556}
-  _startPos: {x: 0, y: -3.5, z: 0}
+  _startPos: {x: 0, y: -5.36, z: 0}
 --- !u!1 &275142697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330005413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.5, z: 0}
+  m_LocalPosition: {x: 0, y: -6.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1458,7 +1458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748577629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.57, z: 0}
+  m_LocalPosition: {x: 0, y: 2.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1480,8 +1480,8 @@ MonoBehaviour:
   NUM_OF_COLUMN: 3
   _brickPrefab: {fileID: 4017340525544876783, guid: fdbbeb98e14b6b4439047c58188820f0,
     type: 3}
-  _brickRowSpacing: 1.5
-  _brickColumnSpacing: 1.5
+  _brickRowSpacing: 0.5
+  _brickColumnSpacing: 0.5
   _brickWidth: 0
   _brickHeight: 0
   _brickCreator: {fileID: 1526232009}

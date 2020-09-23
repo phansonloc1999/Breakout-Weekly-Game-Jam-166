@@ -28,9 +28,10 @@ public class BrickGrid : MonoBehaviour
         Destroy(brickCollider.gameObject);
 
         InitFromBrickTypeGrid(new BRICK_TYPE[,] {
-            { BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL },
-            { BRICK_TYPE.NORMAL, BRICK_TYPE.BOMB, BRICK_TYPE.NORMAL },
-            { BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL, BRICK_TYPE.ROOT }
+            { BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL },
+            { BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL},
+            { BRICK_TYPE.NORMAL, BRICK_TYPE.BOMB, BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL},
+            { BRICK_TYPE.NORMAL, BRICK_TYPE.NORMAL, BRICK_TYPE.ROOT, BRICK_TYPE.NORMAL },
         });
     }
 
@@ -60,6 +61,9 @@ public class BrickGrid : MonoBehaviour
     {
         var gridRowSize = brickTypeGrid.GetLength(0);
         var gridColumnSize = brickTypeGrid.GetLength(1);
+
+        NUM_OF_ROW = gridRowSize;
+        NUM_OF_COLUMN = gridColumnSize;
 
         _brickGameObjs = new GameObject[gridRowSize, gridColumnSize];
 
